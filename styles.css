@@ -8,15 +8,17 @@
 }
 
 :root {
-    --primary: #FF6B6B;
-    --primary-dark: #FF5252;
+    --primary: #FF3B3B;
+    --primary-dark: #E62E2E;
+    --primary-light: #FF6B6B;
+    --accent: #FFA726;
     --gold: #FFD700;
     --silver: #C0C0C0;
     --bronze: #CD7F32;
-    --dark: #1a1a1a;
-    --gray-900: #2d2d2d;
-    --gray-800: #404040;
-    --gray-700: #5a5a5a;
+    --dark: #0a0a0a;
+    --gray-900: #1a1a1a;
+    --gray-800: #2d2d2d;
+    --gray-700: #4a4a4a;
     --gray-600: #757575;
     --gray-500: #9e9e9e;
     --gray-400: #bdbdbd;
@@ -27,11 +29,13 @@
     --white: #ffffff;
     --success: #4CAF50;
     --border: #e8e8e8;
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 
     --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.2);
     --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -47,13 +51,13 @@ body {
    HEADER
    =================================== */
 .header {
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-    padding: 1.5rem 0;
+    background: linear-gradient(135deg, #FF3B3B 0%, #FF6B6B 100%);
+    border-bottom: none;
+    padding: 2rem 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-lg);
 }
 
 .header-content {
@@ -74,15 +78,16 @@ body {
 }
 
 .logo {
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: 800;
-    color: var(--dark);
+    color: var(--white);
     letter-spacing: -0.02em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .tagline {
-    font-size: 0.875rem;
-    color: var(--gray-600);
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.95);
     font-weight: 500;
 }
 
@@ -99,16 +104,18 @@ body {
 }
 
 .stat-value {
-    font-size: 1.75rem;
+    font-size: 2rem;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .stat-label {
     font-size: 0.75rem;
-    color: var(--gray-600);
+    color: rgba(255, 255, 255, 0.9);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
+    font-weight: 600;
 }
 
 /* ===================================
@@ -133,30 +140,31 @@ body {
 .podium-compact {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border-bottom: 2px solid var(--gray-200);
-    background: linear-gradient(135deg, var(--gray-100) 0%, var(--white) 100%);
+    gap: 1px;
+    border-bottom: none;
+    background: var(--gray-200);
     transition: opacity var(--transition);
+    padding: 2rem 0;
+    background: linear-gradient(180deg, #fff 0%, #f8f8f8 100%);
 }
 
 .podium-item-compact {
-    padding: 1.5rem 1rem;
+    padding: 2rem 1.5rem;
     text-align: center;
     position: relative;
-    border-right: 1px solid var(--border);
-    transition: var(--transition);
-}
-
-.podium-item-compact:last-child {
-    border-right: none;
+    background: var(--white);
+    transition: all var(--transition);
 }
 
 .podium-item-compact:hover {
-    background: var(--gray-50);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
 }
 
 .podium-item-compact[data-rank="1"] {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 215, 0, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 100%);
+    border-left: 3px solid var(--gold);
+    border-right: 3px solid var(--gold);
 }
 
 .medal {
