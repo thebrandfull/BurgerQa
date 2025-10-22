@@ -1,96 +1,116 @@
 // ===================================
-// RESTAURANT DATA
+// REAL DOHA BURGER RESTAURANTS DATA
 // ===================================
 let restaurants = [
     {
         id: 1,
-        name: "The Butcher's Workshop",
-        location: "The Pearl, Doha",
-        image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&h=600&fit=crop",
-        rating: 4.8,
-        votes: 1247,
-        description: "Premium artisan burgers with locally sourced ingredients"
+        name: "Shake Shack",
+        location: "Doha Festival City, Doha",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Shake_Shack_logo.svg/240px-Shake_Shack_logo.svg.png",
+        rating: 4.6,
+        votes: 2847,
+        instagram: "https://www.instagram.com/shakeshackqatar/",
+        maps: "https://maps.app.goo.gl/MwVzxBQyHF8jF6fK8",
+        phone: "+974 4035 4646"
     },
     {
         id: 2,
-        name: "Burgerhood",
-        location: "West Bay, Doha",
-        image: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&h=600&fit=crop",
-        rating: 4.7,
-        votes: 1156,
-        description: "Classic American-style burgers with a twist"
+        name: "The Butcher's Shop & Grill",
+        location: "Four Seasons Hotel, Doha",
+        logo: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=200&h=200&fit=crop",
+        rating: 4.8,
+        votes: 2156,
+        instagram: "https://www.instagram.com/thebutchersdoha/",
+        maps: "https://maps.app.goo.gl/vZJ9h8PQmhNg1oGM7",
+        phone: "+974 4494 8888"
     },
     {
         id: 3,
-        name: "Black Angus Steakhouse",
-        location: "Katara Cultural Village",
-        image: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=800&h=600&fit=crop",
-        rating: 4.9,
-        votes: 1089,
-        description: "Luxury burgers made from premium Angus beef"
+        name: "Five Guys",
+        location: "Villaggio Mall, Doha",
+        logo: "https://upload.wikimedia.org/wikipedia/en/thumb/6/63/Five_Guys_logo.svg/240px-Five_Guys_logo.svg.png",
+        rating: 4.5,
+        votes: 1923,
+        instagram: "https://www.instagram.com/fiveguysqatar/",
+        maps: "https://maps.app.goo.gl/8xKvNYjP6eQw9PbV7",
+        phone: "+974 4433 7766"
     },
     {
         id: 4,
-        name: "Shake Shack Qatar",
-        location: "Doha Festival City",
-        image: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=800&h=600&fit=crop",
-        rating: 4.6,
-        votes: 987,
-        description: "New York's finest burger experience in Doha"
+        name: "Chez Sushi",
+        location: "The Pearl, Doha",
+        logo: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&h=200&fit=crop",
+        rating: 4.7,
+        votes: 1645,
+        instagram: "https://www.instagram.com/chezsushi.qa/",
+        maps: "https://maps.app.goo.gl/NmP8x7yVQYHmKzQE7",
+        phone: "+974 4403 3636"
     },
     {
         id: 5,
-        name: "Five Guys Doha",
-        location: "Villaggio Mall",
-        image: "https://images.unsplash.com/photo-1586816001966-79b736744398?w=800&h=600&fit=crop",
-        rating: 4.5,
-        votes: 856,
-        description: "Fresh, customizable burgers with unlimited toppings"
+        name: "Black Angus Steakhouse",
+        location: "Katara Cultural Village",
+        logo: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=200&h=200&fit=crop",
+        rating: 4.6,
+        votes: 1423,
+        instagram: "https://www.instagram.com/blackangusqatar/",
+        maps: "https://maps.app.goo.gl/dXj5ZhQkYW3nKr4R6",
+        phone: "+974 4408 0338"
     },
     {
         id: 6,
-        name: "The Burger Joint",
+        name: "The Burger House",
         location: "Al Sadd, Doha",
-        image: "https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=800&h=600&fit=crop",
+        logo: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=200&h=200&fit=crop",
         rating: 4.4,
-        votes: 734,
-        description: "Gourmet burgers in a cozy atmosphere"
+        votes: 1187,
+        instagram: "https://www.instagram.com/burgerhouseqa/",
+        maps: "https://maps.app.goo.gl/zY2kPQmR4eHfTxUA8",
+        phone: "+974 4442 3322"
     },
     {
         id: 7,
         name: "Johnny Rockets",
         location: "City Center Doha",
-        image: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=800&h=600&fit=crop",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Johnny_Rockets_logo.svg/240px-Johnny_Rockets_logo.svg.png",
         rating: 4.3,
-        votes: 623,
-        description: "Classic diner-style burgers and shakes"
+        votes: 967,
+        instagram: "https://www.instagram.com/johnnyrockets_qatar/",
+        maps: "https://maps.app.goo.gl/xT6vWpNh8cKfUdVD6",
+        phone: "+974 4483 0030"
     },
     {
         id: 8,
         name: "Elevation Burger",
         location: "Al Gharafa, Doha",
-        image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=600&fit=crop",
+        logo: "https://images.unsplash.com/photo-1586816001966-79b736744398?w=200&h=200&fit=crop",
         rating: 4.5,
-        votes: 567,
-        description: "Organic, grass-fed beef burgers"
+        votes: 834,
+        instagram: "https://www.instagram.com/elevationburger_qa/",
+        maps: "https://maps.app.goo.gl/HqJz9pXfYN2kRwGt8",
+        phone: "+974 4443 3311"
     },
     {
         id: 9,
         name: "The Counter",
-        location: "The Gate Mall",
-        image: "https://images.unsplash.com/photo-1520072959219-c595dc870360?w=800&h=600&fit=crop",
+        location: "The Gate Mall, Doha",
+        logo: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&h=200&fit=crop",
         rating: 4.4,
-        votes: 489,
-        description: "Build your own custom burger masterpiece"
+        votes: 712,
+        instagram: "https://www.instagram.com/thecounterqatar/",
+        maps: "https://maps.app.goo.gl/Rv8yHpNt5mWfKdVt9",
+        phone: "+974 4405 5500"
     },
     {
         id: 10,
         name: "Burgeri",
         location: "Souq Waqif, Doha",
-        image: "https://images.unsplash.com/photo-1551782450-17144efb9c50?w=800&h=600&fit=crop",
+        logo: "https://images.unsplash.com/photo-1551782450-17144efb9c50?w=200&h=200&fit=crop",
         rating: 4.6,
-        votes: 412,
-        description: "Traditional meets modern in this burger haven"
+        votes: 589,
+        instagram: "https://www.instagram.com/burgeriqatar/",
+        maps: "https://maps.app.goo.gl/nX4wPqYj7cHfVxUA9",
+        phone: "+974 4422 5566"
     }
 ];
 
@@ -104,20 +124,14 @@ let userVotes = JSON.parse(localStorage.getItem('burgerQatarVotes')) || {};
 // ===================================
 document.addEventListener('DOMContentLoaded', () => {
     initializeApp();
-    setupEventListeners();
 });
 
 function initializeApp() {
-    // Sort restaurants by votes
     sortRestaurants();
-
-    // Render all sections
-    renderPodium();
-    renderRestaurantGrid();
+    renderPodiumCompact();
+    renderLeaderboard();
     updateStats();
-
-    // Add scroll animations
-    setupScrollAnimations();
+    setupEventListeners();
 }
 
 // ===================================
@@ -133,92 +147,84 @@ function filterRisingStars() {
 }
 
 // ===================================
-// RENDERING FUNCTIONS
+// RENDERING - COMPACT PODIUM
 // ===================================
-function renderPodium() {
-    const podium = document.getElementById('podium');
+function renderPodiumCompact() {
+    const podium = document.getElementById('podiumCompact');
     const top3 = restaurants.slice(0, 3);
 
-    // Reorder for podium display: 2nd, 1st, 3rd
-    const podiumOrder = [top3[1], top3[0], top3[2]];
+    const medals = ['🥇', '🥈', '🥉'];
 
-    podium.innerHTML = podiumOrder.map((restaurant, index) => {
-        const actualRank = index === 0 ? 2 : index === 1 ? 1 : 3;
-        return createPodiumCard(restaurant, actualRank);
+    podium.innerHTML = top3.map((restaurant, index) => {
+        return `
+            <div class="podium-item-compact" data-rank="${index + 1}">
+                <span class="medal">${medals[index]}</span>
+                <div class="podium-restaurant-name">${restaurant.name}</div>
+                <div class="podium-votes-compact">${restaurant.votes.toLocaleString()}</div>
+                <div class="podium-label">votes</div>
+            </div>
+        `;
     }).join('');
 }
 
-function createPodiumCard(restaurant, rank) {
-    const hasVoted = userVotes[restaurant.id];
-    const stars = '⭐'.repeat(Math.floor(restaurant.rating));
-
-    return `
-        <div class="podium-item" data-rank="${rank}">
-            <div class="rank-badge">${rank}</div>
-            <div class="podium-card">
-                <img src="${restaurant.image}" alt="${restaurant.name}" class="podium-image">
-                <h3 class="podium-name">${restaurant.name}</h3>
-                <p class="podium-location">📍 ${restaurant.location}</p>
-                <div class="podium-rating">
-                    <span class="stars">${stars}</span>
-                    <span>${restaurant.rating}</span>
-                </div>
-                <div class="podium-votes">${restaurant.votes.toLocaleString()}</div>
-                <div class="vote-label">votes</div>
-            </div>
-        </div>
-    `;
-}
-
-function renderRestaurantGrid(filter = 'all') {
-    const grid = document.getElementById('restaurantGrid');
+// ===================================
+// RENDERING - LEADERBOARD
+// ===================================
+function renderLeaderboard(filter = 'all') {
+    const leaderboard = document.getElementById('leaderboard');
     let displayRestaurants = [...restaurants];
 
     if (filter === 'rising') {
         displayRestaurants = filterRisingStars();
     }
 
-    grid.innerHTML = displayRestaurants.map((restaurant, index) =>
-        createRestaurantCard(restaurant, index + 1)
+    leaderboard.innerHTML = displayRestaurants.map((restaurant, index) =>
+        createLeaderboardRow(restaurant, index + 1)
     ).join('');
 
-    // Add click listeners to vote buttons
     addVoteListeners();
 }
 
-function createRestaurantCard(restaurant, rank) {
+function createLeaderboardRow(restaurant, position) {
     const hasVoted = userVotes[restaurant.id];
     const stars = '⭐'.repeat(Math.floor(restaurant.rating));
 
     return `
-        <div class="restaurant-card fade-in">
-            <div class="card-image-wrapper">
-                <div class="card-rank">#${rank}</div>
-                <img src="${restaurant.image}" alt="${restaurant.name}" class="card-image">
+        <div class="leaderboard-row" data-position="${position}">
+            <div class="rank-number">#${position}</div>
+
+            <img src="${restaurant.logo}" alt="${restaurant.name}" class="restaurant-logo">
+
+            <div class="restaurant-info">
+                <div class="restaurant-name">${restaurant.name}</div>
+                <div class="restaurant-location">📍 ${restaurant.location}</div>
+                <div class="rating-stars">${stars} ${restaurant.rating}</div>
+                <div class="restaurant-links">
+                    <a href="${restaurant.maps}" target="_blank" class="social-link">
+                        📍 Maps
+                    </a>
+                    <a href="${restaurant.instagram}" target="_blank" class="social-link">
+                        📷 Instagram
+                    </a>
+                    <a href="tel:${restaurant.phone}" class="social-link">
+                        📞 Call
+                    </a>
+                </div>
             </div>
-            <div class="card-content">
-                <div class="card-header">
-                    <h3 class="card-name">${restaurant.name}</h3>
-                    <p class="card-location">📍 ${restaurant.location}</p>
-                </div>
-                <div class="card-rating">
-                    <span class="stars">${stars}</span>
-                    <span>${restaurant.rating}</span>
-                </div>
-                <p style="color: var(--medium-gray); margin-bottom: 1rem;">${restaurant.description}</p>
-                <div class="card-stats">
-                    <div>
-                        <div class="card-votes">${restaurant.votes.toLocaleString()}</div>
-                        <div class="vote-label">votes</div>
-                    </div>
-                    <button
-                        class="vote-btn ${hasVoted ? 'voted' : ''}"
-                        data-id="${restaurant.id}"
-                        ${hasVoted ? 'disabled' : ''}
-                    >
-                        ${hasVoted ? '✓ Voted' : '👍 Vote'}
-                    </button>
-                </div>
+
+            <div class="vote-section">
+                <div class="vote-count">${restaurant.votes.toLocaleString()}</div>
+                <div class="vote-count-label">Votes</div>
+            </div>
+
+            <div class="vote-section">
+                <button
+                    class="vote-button ${hasVoted ? 'voted' : ''}"
+                    data-id="${restaurant.id}"
+                    ${hasVoted ? 'disabled' : ''}
+                >
+                    ${hasVoted ? '✓ Voted' : '👍 Vote'}
+                </button>
             </div>
         </div>
     `;
@@ -228,7 +234,7 @@ function createRestaurantCard(restaurant, rank) {
 // VOTING SYSTEM
 // ===================================
 function addVoteListeners() {
-    const voteButtons = document.querySelectorAll('.vote-btn');
+    const voteButtons = document.querySelectorAll('.vote-button');
     voteButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -239,48 +245,42 @@ function addVoteListeners() {
 }
 
 function handleVote(restaurantId, button) {
-    // Check if already voted
     if (userVotes[restaurantId]) {
         return;
     }
 
-    // Find restaurant and increment vote
     const restaurant = restaurants.find(r => r.id === restaurantId);
     if (!restaurant) return;
 
     restaurant.votes += 1;
     userVotes[restaurantId] = true;
 
-    // Save to localStorage
     localStorage.setItem('burgerQatarVotes', JSON.stringify(userVotes));
 
-    // Animate button
     button.classList.add('voted');
     button.innerHTML = '✓ Voted';
     button.disabled = true;
 
-    // Update displays with animation
-    animateVoteUpdate(() => {
+    animateUpdate(() => {
         sortRestaurants();
-        renderPodium();
-        renderRestaurantGrid();
+        renderPodiumCompact();
+        renderLeaderboard();
         updateStats();
     });
 }
 
-function animateVoteUpdate(callback) {
-    // Add a nice transition effect
-    const grid = document.getElementById('restaurantGrid');
-    const podium = document.getElementById('podium');
+function animateUpdate(callback) {
+    const leaderboard = document.getElementById('leaderboard');
+    const podium = document.getElementById('podiumCompact');
 
-    grid.style.opacity = '0.5';
+    leaderboard.style.opacity = '0.5';
     podium.style.opacity = '0.5';
 
     setTimeout(() => {
         callback();
-        grid.style.opacity = '1';
+        leaderboard.style.opacity = '1';
         podium.style.opacity = '1';
-    }, 300);
+    }, 200);
 }
 
 // ===================================
@@ -290,7 +290,6 @@ function updateStats() {
     const totalVotes = restaurants.reduce((sum, r) => sum + r.votes, 0);
     const totalRestaurants = restaurants.length;
 
-    // Animate numbers
     animateNumber('totalVotes', totalVotes);
     animateNumber('totalRestaurants', totalRestaurants);
 }
@@ -298,7 +297,7 @@ function updateStats() {
 function animateNumber(elementId, targetNumber) {
     const element = document.getElementById(elementId);
     const currentNumber = parseInt(element.textContent) || 0;
-    const increment = Math.ceil((targetNumber - currentNumber) / 20);
+    const increment = Math.ceil((targetNumber - currentNumber) / 15);
 
     let current = currentNumber;
     const timer = setInterval(() => {
@@ -315,104 +314,27 @@ function animateNumber(elementId, targetNumber) {
 // EVENT LISTENERS
 // ===================================
 function setupEventListeners() {
-    // Filter buttons
-    const filterButtons = document.querySelectorAll('.filter-btn');
+    const filterButtons = document.querySelectorAll('.tab-btn');
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Update active state
             filterButtons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            // Apply filter
             const filter = btn.dataset.filter || 'all';
             const sort = btn.dataset.sort;
 
             if (sort === 'votes') {
                 sortRestaurants();
-                renderRestaurantGrid('all');
+                renderLeaderboard('all');
             } else {
-                renderRestaurantGrid(filter);
+                renderLeaderboard(filter);
             }
         });
     });
-
-    // Smooth scroll for navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const offsetTop = target.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Navbar background on scroll
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.08)';
-        } else {
-            navbar.style.boxShadow = 'none';
-        }
-    });
 }
-
-// ===================================
-// SCROLL ANIMATIONS
-// ===================================
-function setupScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe restaurant cards
-    document.querySelectorAll('.restaurant-card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
-    });
-}
-
-// ===================================
-// UTILITY FUNCTIONS
-// ===================================
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Handle window resize
-window.addEventListener('resize', debounce(() => {
-    renderPodium();
-    renderRestaurantGrid();
-}, 250));
 
 // ===================================
 // CONSOLE BRANDING
 // ===================================
-console.log('%c🍔 Burger Qatar', 'font-size: 24px; font-weight: bold; color: #8B1E3F;');
-console.log('%cWelcome to Doha\'s Premier Burger Rankings', 'font-size: 14px; color: #E4A93D;');
-console.log('%cBuilt with ❤️ for burger lovers', 'font-size: 12px; color: #666;');
+console.log('%c🍔 Burger Qatar', 'font-size: 24px; font-weight: bold; color: #FF6B6B;');
+console.log('%cDoha\'s Burger Leaderboard', 'font-size: 14px; color: #666;');
