@@ -36,7 +36,7 @@ export default function RankingsPage() {
     // Save vote
     const newVoted = new Set(votedFor).add(id);
     setVotedFor(newVoted);
-    localStorage.setItem('votedRestaurants', JSON.stringify([...newVoted]));
+    localStorage.setItem('votedRestaurants', JSON.stringify(Array.from(newVoted)));
 
     // Show success message
     setShowVoteSuccess(true);
