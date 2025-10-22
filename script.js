@@ -1,123 +1,72 @@
 // ===================================
-// REAL DOHA BURGER RESTAURANTS DATA
+// RESTAURANT DATA - SYNCED WITH ADMIN
 // ===================================
-let restaurants = [
-    {
-        id: 1,
-        name: "Shake Shack",
-        location: "Doha Festival City, Doha",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Shake_Shack_logo.svg/240px-Shake_Shack_logo.svg.png",
-        rating: 4.6,
-        votes: 2847,
-        instagram: "https://www.instagram.com/shakeshackqatar/",
-        maps: "https://maps.app.goo.gl/MwVzxBQyHF8jF6fK8",
-        phone: "+974 4035 4646"
-    },
-    {
-        id: 2,
-        name: "The Butcher's Shop & Grill",
-        location: "Four Seasons Hotel, Doha",
-        logo: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=200&h=200&fit=crop",
-        rating: 4.8,
-        votes: 2156,
-        instagram: "https://www.instagram.com/thebutchersdoha/",
-        maps: "https://maps.app.goo.gl/vZJ9h8PQmhNg1oGM7",
-        phone: "+974 4494 8888"
-    },
-    {
-        id: 3,
-        name: "Five Guys",
-        location: "Villaggio Mall, Doha",
-        logo: "https://upload.wikimedia.org/wikipedia/en/thumb/6/63/Five_Guys_logo.svg/240px-Five_Guys_logo.svg.png",
-        rating: 4.5,
-        votes: 1923,
-        instagram: "https://www.instagram.com/fiveguysqatar/",
-        maps: "https://maps.app.goo.gl/8xKvNYjP6eQw9PbV7",
-        phone: "+974 4433 7766"
-    },
-    {
-        id: 4,
-        name: "Chez Sushi",
-        location: "The Pearl, Doha",
-        logo: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&h=200&fit=crop",
-        rating: 4.7,
-        votes: 1645,
-        instagram: "https://www.instagram.com/chezsushi.qa/",
-        maps: "https://maps.app.goo.gl/NmP8x7yVQYHmKzQE7",
-        phone: "+974 4403 3636"
-    },
-    {
-        id: 5,
-        name: "Black Angus Steakhouse",
-        location: "Katara Cultural Village",
-        logo: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=200&h=200&fit=crop",
-        rating: 4.6,
-        votes: 1423,
-        instagram: "https://www.instagram.com/blackangusqatar/",
-        maps: "https://maps.app.goo.gl/dXj5ZhQkYW3nKr4R6",
-        phone: "+974 4408 0338"
-    },
-    {
-        id: 6,
-        name: "The Burger House",
-        location: "Al Sadd, Doha",
-        logo: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=200&h=200&fit=crop",
-        rating: 4.4,
-        votes: 1187,
-        instagram: "https://www.instagram.com/burgerhouseqa/",
-        maps: "https://maps.app.goo.gl/zY2kPQmR4eHfTxUA8",
-        phone: "+974 4442 3322"
-    },
-    {
-        id: 7,
-        name: "Johnny Rockets",
-        location: "City Center Doha",
-        logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Johnny_Rockets_logo.svg/240px-Johnny_Rockets_logo.svg.png",
-        rating: 4.3,
-        votes: 967,
-        instagram: "https://www.instagram.com/johnnyrockets_qatar/",
-        maps: "https://maps.app.goo.gl/xT6vWpNh8cKfUdVD6",
-        phone: "+974 4483 0030"
-    },
-    {
-        id: 8,
-        name: "Elevation Burger",
-        location: "Al Gharafa, Doha",
-        logo: "https://images.unsplash.com/photo-1586816001966-79b736744398?w=200&h=200&fit=crop",
-        rating: 4.5,
-        votes: 834,
-        instagram: "https://www.instagram.com/elevationburger_qa/",
-        maps: "https://maps.app.goo.gl/HqJz9pXfYN2kRwGt8",
-        phone: "+974 4443 3311"
-    },
-    {
-        id: 9,
-        name: "The Counter",
-        location: "The Gate Mall, Doha",
-        logo: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&h=200&fit=crop",
-        rating: 4.4,
-        votes: 712,
-        instagram: "https://www.instagram.com/thecounterqatar/",
-        maps: "https://maps.app.goo.gl/Rv8yHpNt5mWfKdVt9",
-        phone: "+974 4405 5500"
-    },
-    {
-        id: 10,
-        name: "Burgeri",
-        location: "Souq Waqif, Doha",
-        logo: "https://images.unsplash.com/photo-1551782450-17144efb9c50?w=200&h=200&fit=crop",
-        rating: 4.6,
-        votes: 589,
-        instagram: "https://www.instagram.com/burgeriqatar/",
-        maps: "https://maps.app.goo.gl/nX4wPqYj7cHfVxUA9",
-        phone: "+974 4422 5566"
+function getDefaultRestaurants() {
+    return [
+        {
+            id: 1,
+            name: "Shake Shack",
+            location: "Doha Festival City, Doha",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Shake_Shack_logo.svg/240px-Shake_Shack_logo.svg.png",
+            rating: 4.6,
+            votes: 2847,
+            instagram: "https://www.instagram.com/shakeshackqatar/",
+            maps: "https://maps.app.goo.gl/MwVzxBQyHF8jF6fK8",
+            phone: "+974 4035 4646"
+        },
+        {
+            id: 2,
+            name: "The Butcher's Shop & Grill",
+            location: "Four Seasons Hotel, Doha",
+            logo: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=200&h=200&fit=crop",
+            rating: 4.8,
+            votes: 2156,
+            instagram: "https://www.instagram.com/thebutchersdoha/",
+            maps: "https://maps.app.goo.gl/vZJ9h8PQmhNg1oGM7",
+            phone: "+974 4494 8888"
+        },
+        {
+            id: 3,
+            name: "Five Guys",
+            location: "Villaggio Mall, Doha",
+            logo: "https://upload.wikimedia.org/wikipedia/en/thumb/6/63/Five_Guys_logo.svg/240px-Five_Guys_logo.svg.png",
+            rating: 4.5,
+            votes: 1923,
+            instagram: "https://www.instagram.com/fiveguysqatar/",
+            maps: "https://maps.app.goo.gl/8xKvNYjP6eQw9PbV7",
+            phone: "+974 4433 7766"
+        }
+    ];
+}
+
+// Load restaurants from localStorage (managed by admin panel)
+function loadRestaurants() {
+    const stored = localStorage.getItem('restaurants');
+    if (stored) {
+        try {
+            return JSON.parse(stored);
+        } catch (e) {
+            console.error('Error loading restaurants:', e);
+            return getDefaultRestaurants();
+        }
     }
-];
+    // First time - save defaults
+    const defaults = getDefaultRestaurants();
+    localStorage.setItem('restaurants', JSON.stringify(defaults));
+    return defaults;
+}
+
+let restaurants = loadRestaurants();
 
 // ===================================
 // STATE MANAGEMENT
 // ===================================
 let userVotes = JSON.parse(localStorage.getItem('burgerQatarVotes')) || {};
+
+// Save restaurants back to localStorage
+function saveRestaurants() {
+    localStorage.setItem('restaurants', JSON.stringify(restaurants));
+}
 
 // ===================================
 // INITIALIZATION
@@ -255,7 +204,9 @@ function handleVote(restaurantId, button) {
     restaurant.votes += 1;
     userVotes[restaurantId] = true;
 
+    // Save both votes and updated restaurant data
     localStorage.setItem('burgerQatarVotes', JSON.stringify(userVotes));
+    saveRestaurants();
 
     button.classList.add('voted');
     button.innerHTML = '✓ Voted';
