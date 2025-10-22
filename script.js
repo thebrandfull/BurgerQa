@@ -355,9 +355,9 @@ function setupEventListeners() {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(26, 26, 26, 0.98)';
+            navbar.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.08)';
         } else {
-            navbar.style.background = 'rgba(26, 26, 26, 0.95)';
+            navbar.style.boxShadow = 'none';
         }
     });
 }
