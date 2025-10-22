@@ -23,6 +23,7 @@
     --gray-300: #e0e0e0;
     --gray-200: #eeeeee;
     --gray-100: #f5f5f5;
+    --gray-50: #fafafa;
     --white: #ffffff;
     --success: #4CAF50;
     --border: #e8e8e8;
@@ -135,6 +136,7 @@ body {
     gap: 0;
     border-bottom: 2px solid var(--gray-200);
     background: linear-gradient(135deg, var(--gray-100) 0%, var(--white) 100%);
+    transition: opacity var(--transition);
 }
 
 .podium-item-compact {
@@ -226,6 +228,7 @@ body {
    =================================== */
 .leaderboard {
     padding: 0;
+    transition: opacity var(--transition);
 }
 
 .leaderboard-row {
