@@ -1,62 +1,290 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Live rankings of the best burger restaurants in Doha, Qatar. Vote and see real-time leaderboard.">
-    <title>Burger Qatar - Doha's Burger Leaderboard</title>
+    <meta name="description" content="Qatar's definitive, no-BS rankings for the best burger restaurants in Doha. Transparent, math-backed, updated continuously.">
+    <meta name="keywords" content="Qatar restaurants, Doha burgers, best burgers Qatar, restaurant rankings">
+    <title>Burger Qatar - Doha's Best Burgers, Ranked</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Burger Qatar - Doha's Best Burgers, Ranked">
+    <meta property="og:description" content="The definitive, transparent rankings for burger restaurants in Qatar">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://burgerqa.com">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <div class="branding">
-                <h1 class="logo">🍔 Burger Qatar</h1>
-                <p class="tagline">Doha's Burger Leaderboard</p>
-            </div>
-            <div class="header-stats">
-                <div class="stat-box">
-                    <span class="stat-value" id="totalVotes">0</span>
-                    <span class="stat-label">Total Votes</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-value" id="totalRestaurants">10</span>
-                    <span class="stat-label">Restaurants</span>
-                </div>
-                <a href="admin.html" class="admin-link" title="Admin Panel">⚙️</a>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="/" class="brand">
+                <span class="brand-icon">🍔</span>
+                <span class="brand-text">Burger Qatar</span>
+            </a>
+
+            <div class="nav-menu">
+                <a href="#rankings" class="nav-link">Rankings</a>
+                <a href="#compare" class="nav-link">Compare</a>
+                <a href="#methodology" class="nav-link">How It Works</a>
+                <button class="lang-toggle" onclick="toggleLanguage()">
+                    <span class="lang-icon">🌐</span>
+                    <span id="langText">العربية</span>
+                </button>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main Leaderboard -->
-    <main class="main-container">
-        <div class="leaderboard-wrapper">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-en="Doha's Best Burgers, Ranked" data-ar="أفضل برجر في الدوحة، مرتب">
+                    Doha's Best Burgers, Ranked
+                </h1>
+                <p class="hero-subtitle" data-en="Transparent, math-backed rankings. No BS." data-ar="تصنيفات شفافة ومدعومة بالرياضيات. بدون هراء.">
+                    Transparent, math-backed rankings. No BS.
+                </p>
 
+                <!-- Quick Stats -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalRestaurants">0</div>
+                        <div class="stat-label" data-en="Restaurants" data-ar="مطعم">Restaurants</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalVotes">0</div>
+                        <div class="stat-label" data-en="Votes Cast" data-ar="أصوات">Votes Cast</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="avgScore">0</div>
+                        <div class="stat-label" data-en="Avg Score" data-ar="متوسط النقاط">Avg Score</div>
+                    </div>
+                </div>
+
+                <a href="#rankings" class="cta-primary">
+                    <span data-en="View Full Rankings" data-ar="عرض التصنيفات الكاملة">View Full Rankings</span>
+                    <span class="cta-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-wrapper">
+                <div class="filter-group">
+                    <label class="filter-label" data-en="Area" data-ar="المنطقة">Area</label>
+                    <select id="filterArea" class="filter-select" onchange="applyFilters()">
+                        <option value="">All Areas</option>
+                        <option value="The Pearl">The Pearl</option>
+                        <option value="West Bay">West Bay</option>
+                        <option value="Lusail">Lusail</option>
+                        <option value="Msheireb">Msheireb</option>
+                        <option value="Katara">Katara</option>
+                        <option value="Souq Waqif">Souq Waqif</option>
+                        <option value="Al Sadd">Al Sadd</option>
+                        <option value="Doha Festival City">Doha Festival City</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label" data-en="Cuisine" data-ar="المطبخ">Cuisine</label>
+                    <select id="filterCuisine" class="filter-select" onchange="applyFilters()">
+                        <option value="">All Cuisines</option>
+                        <option value="American">American</option>
+                        <option value="Gourmet">Gourmet</option>
+                        <option value="Fast Food">Fast Food</option>
+                        <option value="Middle Eastern">Middle Eastern</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label" data-en="Price" data-ar="السعر">Price</label>
+                    <select id="filterPrice" class="filter-select" onchange="applyFilters()">
+                        <option value="">All Prices</option>
+                        <option value="1">QAR (Budget)</option>
+                        <option value="2">QARQAR (Mid)</option>
+                        <option value="3">QARQARQAR (Fine)</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label" data-en="Occasion" data-ar="المناسبة">Occasion</label>
+                    <select id="filterOccasion" class="filter-select" onchange="applyFilters()">
+                        <option value="">All Occasions</option>
+                        <option value="family">Family Friendly</option>
+                        <option value="business">Business Lunch</option>
+                        <option value="late-night">Late Night</option>
+                        <option value="casual">Casual Dining</option>
+                    </select>
+                </div>
+
+                <button class="filter-reset" onclick="resetFilters()">
+                    <span data-en="Reset" data-ar="إعادة تعيين">Reset</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rankings -->
+    <section id="rankings" class="rankings-section">
+        <div class="container">
             <!-- Top 3 Podium -->
-            <div class="podium-compact" id="podiumCompact">
-                <div style="padding: 2rem; text-align: center; color: #999;">Loading top 3...</div>
-            </div>
-
-            <!-- Filters -->
-            <div class="controls">
-                <div class="filter-tabs">
-                    <button class="tab-btn active" data-filter="all">All Rankings</button>
-                    <button class="tab-btn" data-filter="rising">Rising Stars</button>
-                    <button class="tab-btn" data-sort="votes">Most Voted</button>
+            <div class="podium-section">
+                <h2 class="section-title" data-en="Top 3 Champions" data-ar="أفضل 3 أبطال">Top 3 Champions</h2>
+                <div class="podium" id="podium">
+                    <!-- Generated by JS -->
                 </div>
             </div>
 
-            <!-- Leaderboard Table -->
-            <div class="leaderboard" id="leaderboard">
-                <div style="padding: 3rem; text-align: center; color: #999;">Loading rankings...</div>
+            <!-- Complete Rankings -->
+            <div class="rankings-list-section">
+                <div class="rankings-header">
+                    <h2 class="section-title" data-en="Complete Rankings" data-ar="التصنيفات الكاملة">Complete Rankings</h2>
+                    <div class="view-toggle">
+                        <button class="view-btn active" onclick="setView('list')">
+                            <span>☰</span>
+                        </button>
+                        <button class="view-btn" onclick="setView('grid')">
+                            <span>▦</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="rankingsList" class="rankings-list">
+                    <!-- Generated by JS -->
+                </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Pairwise Comparison -->
+    <section id="compare" class="compare-section">
+        <div class="container">
+            <div class="compare-header">
+                <h2 class="section-title" data-en="Which is Better?" data-ar="أيهما أفضل؟">Which is Better?</h2>
+                <p class="section-subtitle" data-en="Help us improve rankings by comparing restaurants" data-ar="ساعدنا في تحسين التصنيفات من خلال المقارنة بين المطاعم">
+                    Help us improve rankings by comparing restaurants
+                </p>
+            </div>
+
+            <div class="compare-widget" id="compareWidget">
+                <!-- Generated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology -->
+    <section id="methodology" class="methodology-section">
+        <div class="container">
+            <div class="methodology-content">
+                <h2 class="section-title" data-en="How Rankings Work" data-ar="كيف تعمل التصنيفات">How Rankings Work</h2>
+
+                <div class="methodology-grid">
+                    <div class="method-card">
+                        <div class="method-icon">📊</div>
+                        <h3 class="method-title">Wilson Score</h3>
+                        <p class="method-text">
+                            We use the Wilson score lower bound to calculate confidence intervals.
+                            This prevents new restaurants with few votes from dominating the rankings.
+                        </p>
+                        <div class="method-formula">
+                            <code>weight = 60%</code>
+                        </div>
+                    </div>
+
+                    <div class="method-card">
+                        <div class="method-icon">⚔️</div>
+                        <h3 class="method-title">Pairwise Wins</h3>
+                        <p class="method-text">
+                            Head-to-head comparisons using Elo-style ratings.
+                            Great for quickly separating the best from the rest.
+                        </p>
+                        <div class="method-formula">
+                            <code>weight = 25%</code>
+                        </div>
+                    </div>
+
+                    <div class="method-card">
+                        <div class="method-icon">⏰</div>
+                        <h3 class="method-title">Recency Factor</h3>
+                        <p class="method-text">
+                            Recent votes matter more. We apply a decay factor with a 6-month half-life
+                            to keep rankings fresh and relevant.
+                        </p>
+                        <div class="method-formula">
+                            <code>decay = 0.5^(days/180)</code>
+                        </div>
+                    </div>
+
+                    <div class="method-card">
+                        <div class="method-icon">🛡️</div>
+                        <h3 class="method-title">Anti-Gaming</h3>
+                        <p class="method-text">
+                            Rate limits, device fingerprinting, and anomaly detection
+                            prevent vote manipulation and ensure fair rankings.
+                        </p>
+                        <div class="method-formula">
+                            <code>max 20 votes/day</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="methodology-formula">
+                    <h3>Final Score Formula</h3>
+                    <pre class="formula-code">score = 100 × (
+  0.60 × wilson_score
+  + 0.25 × pairwise_rating
+  + 0.15 × expert_rating
+) × recency_factor × trust_weight</pre>
+                    <p class="formula-note">
+                        Minimum 30 votes required to appear in rankings.
+                        Rankings updated every 6 hours.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="footer-compact">
-        <p>&copy; 2025 Burger Qatar | <a href="https://burgerqa.com">burgerqa.com</a></p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand">
+                        <span class="brand-icon">🍔</span>
+                        <span class="brand-text">Burger Qatar</span>
+                    </div>
+                    <p class="footer-tagline" data-en="Qatar, ranked." data-ar="قطر، مرتبة.">Qatar, ranked.</p>
+                </div>
+
+                <div class="footer-links">
+                    <a href="#rankings" class="footer-link">Rankings</a>
+                    <a href="#compare" class="footer-link">Compare</a>
+                    <a href="#methodology" class="footer-link">Methodology</a>
+                    <a href="admin.html" class="footer-link">Admin</a>
+                </div>
+
+                <div class="footer-social">
+                    <p class="footer-text" data-en="Made with precision in Qatar" data-ar="صنع بدقة في قطر">
+                        Made with precision in Qatar
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Burger Qatar. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
